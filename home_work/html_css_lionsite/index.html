@@ -5,140 +5,276 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>KodeLion</title>
+    <title>모두의 HTML/CSS</title>
 </head>
 <body>
     <header>
+        <h1>
+            <img src="" alt="모두의 HTML/CSS">
+        </h1>
         <nav>
-            <h1>모두의 HTML/CSS</h1>
-            <a href="">Home</a>
-            <a href="">HTML</a>
-            <a href="">CSS</a>
-            <a href="">Jabascipt</a>
-            <button>돋보기</button>
+           <a href="">HOME</a>
+           <a href="">HTML</a>
+           <a href="">CSS</a>
+           <a href="">Jsvascript</a>
         </nav>
+        <article> <!--검색 모달창-->
+            <h2>사이트내 검색</h2>
+            <form action="">
+              <input type="serch">
+              <button type="submit">검색 실행</button> 
+            </form>
+        </article>
     </header>
+    <!-- main -->
     <main>
         <section class="start">
-            <figure>
-                <figcaption>
-                    <img src="/home_work/html_css_lionsite/img/메인사자.PNG">
-                  <h2>모두의 HTML/CSS</h2>
-                  <p>HELLO WORLD! :)</p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur.
-                  </p>
-                </figcaption>
-            </figure>
+            <img src="/home_work/html_css_lionsite/img/메인사자.PNG" alt=" 손을 흔드는 라이언">
+            <h2>모두의 HTML/CSS</h2>
+            <strong>
+                HELLO WORLD! :)
+            </strong>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur.
+            </p>
+            <a href="">회원가입</a>
+            <a href="">로그인</a> <!-- 로그인 모달창일 경우 angcr-->
+            <aside>
+                <a href=""><img src="" alt="MBTI 강의보러가기"></a> 
+                <a href="">30분 요약강좌 보러가기</a>
+            </aside>
         </section>
         <section class="goal">
-            <h2>학습목표</h2>
-            <h3>HTML</h3>
-            <ul>
-                <li> Hypertext Markup Language 하이퍼텍스트 마크업 언어</li>
-                <li>
-                    웹을 이루는 가장 기초적인구성요소로, 웹 콘텐츠의 의미와 구조를 정의할 때 사용.
-                </li>
-            </ul>
-            <h3>CSS</h3>
-            <ul>
-                <li>Cascading Style Sheets</li>
-                <li>
+            <h2>웹 언어와 즐거운 회사생활</h2>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Hypertext Markup Language 하이퍼텍스트 마크업 언어</dd>
+                <dd>웹을 이루는 가장 기초적인구성요소로, 웹 콘텐츠의 의미와 구조를 정의할 때 사용.</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+                <dd>
                     HTML이나 XML(XML의 방언인 SVG, XHTML 포함)로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어.
-                </li>
-            </ul>
-            <h3>javascripy</h3>
-            <ul>
-                <li> 일급 함수를 사용하는 가벼운 객체 지향 인터프리터 언어</li>
-                <li>
+                </dd>
+                <dt>JS</dt>
+                <dd>일급 함수를 사용하는 가벼운 객체 지향 인터프리터 언어</dd>
+                <dd>
                     웹페이지의 스크립트 언어로 잘 알려져 있지만, 브라우저가 아닌 환경에서도 많이 사용됨.
-                </li>
-            </ul>
-        </section>
-        <section class="time">
-            <h2>시간표</h2>
+                </dd>
+            </dl>
             <figure>
+                <img src="/home_work/html_css_lionsite/img/MULA.png" alt="땀흘리며 운동하는 뮤라">
                 <figcaption>
-                <h3>오전5:00</h3>
-                <p>헛둘셋넷 <br>열심히 운동하기</p>
+                <time datetime="05:00">오전5:00</time>         
+                <strong>헛둘셋넷 <br>열심히 운동하기</strong>
                 <p>amet consectetur adipisicing elit.</p>
-                <img src="/home_work/html_css_lionsite/img/MULA.png">
                 </figcaption>
             </figure>
             <figure>
+                <img src="/home_work/html_css_lionsite/img/MULA.png" alt="소울곰">
                 <figcaption>
-                <h3>오전9:00</h3>
-                <p>지친몸 이끌고<br>출근하기</p>
+                <time datetime="09:00">오전9:00</time>         
+                <strong>헛둘셋넷 <br>열심히 운동하기</strong>
                 <p>amet consectetur adipisicing elit.</p>
-                <img src="/home_work/html_css_lionsite/img/soulBear.PNG">
                 </figcaption>
             </figure>
             <figure>
+                <img src="/home_work/html_css_lionsite/img/MULA.png" alt="개리">
                 <figcaption>
-                <h3>오후06:00</h3>
-                <p>치킨과 함께하는<br>씐나는 퇴근</p>
+                <time datetime="18:00">오후6:00</time>         
+                <strong>헛둘셋넷 <br>열심히 운동하기</strong>
                 <p>amet consectetur adipisicing elit.</p>
-                <img src="/home_work/html_css_lionsite/img/gary.PNG">
                 </figcaption>
             </figure>
         </section>
         <section>
             <h2>Lorem ipsum dolor sit.</h2>
-            <button>Tab1</button>
-            <button>Tab2</button>
-            <button>Tab3</button>
-            <a href="">more +</a>
             <ol>
-                <li>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam aliquam ratione, a eos perspicia...
-                </li>
-                <li>
-                    Ullam aliquam ratione, a eos perspiciatis temporibus
-                </li>
-                <li>
-                    Dolores quia excepturi alias quam quidem, necessitatibus a perferendis eum vitae aliquam volu...
-                </li>
-                <li>
-                    Adipisci provident laborum maxime dolore omnis iure consequuntur?
-                </li>
+                <li><button type="button">Tab1</button></li>
+                <li><button type="button">Tab2</button></li>
+                <li><button type="button">Tab3</button></li>
             </ol>
+            <section>
+                <h3>Tab1 의 데이터 목록</h3>
+                <ol start='10' reversed>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <h3>Tab2 의 데이터 목록</h3>
+                <ol start='10' reversed>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <h3>Tab3 의 데이터 목록</h3>
+                <ol start='10' reversed>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>10</span>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <time datatime="2022-01-01">2022.01.01</time>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+            <a href="">more +</a>
+            <!-- 스크린리더 읽는 순서를 고려해서 section 마지막에 배치하였음.-->
         </section>
         <section>
-            <h2>
-                Amet consectetur<br>adipisicing.
-            </h2>
-            <button><</button>
-            <button>></button>
-            <figure>
-                <figcaption>
-                <img src="/home_work/html_css_lionsite/img/ricat.PNG">
-                <p>
-                    Ullam aliquam ratione, a eos
-                    perspiciatis temporibus ...
-                </p>
-                </figcaption>
-            </figure>
-            <figure>
-                <figcaption>
-                <img src="/home_work/html_css_lionsite/img/binky.PNG">
-                <p>
-                    Ullam aliquam ratione, a eos
-                    perspiciatis temporibus ...
-                </p>
-                </figcaption>
-            </figure>
-            <figure>
-                <figcaption>
-                <img src="/home_work/html_css_lionsite/img/javaDog.PNG">
-                <p>
-                    Ullam aliquam ratione, a eos
-                    perspiciatis temporibus ...
-                </p>
-                </figcaption>
-            </figure>
-            <button></button>
-            <button></button>
-            <button></button>
+            <h2>Amet consectetur<br>adipisicing.</h2>
+            <article>
+                <h3>위니비언의 라이프 스타일</h3>
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="/home_work/html_css_lionsite/img/ricat.PNG" >
+                            <figcaption>
+                            <em>
+                                Ullam aliquam ratione, a eos
+                                perspiciatis temporibus ...
+                            </em>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/home_work/html_css_lionsite/img/ricat.PNG" >
+                            <figcaption>
+                            <em>
+                                Ullam aliquam ratione, a eos
+                                perspiciatis temporibus ...
+                            </em>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/home_work/html_css_lionsite/img/ricat.PNG" >
+                            <figcaption>
+                            <em>
+                                Ullam aliquam ratione, a eos
+                                perspiciatis temporibus ...
+                            </em>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button type="button"> 
+                    <img src="" alt="이전 슬라이드">
+                </button>
+                <button type="button">
+                    <img src="" alt="다음 슬라이드">
+                </button>
+                <!-- 스크린리더 읽는 순서를 고려해서 section 마지막에 배치하였음.-->
+                <ol>
+                    <li>
+                        <button type="button">1~3번째 슬라이드</button>
+                    </li>
+                    <li>
+                        <button type="button">4~6번째 슬라이드</button>
+                    </li>
+                    <li>
+                        <button type="button">7~9번째 슬라이드</button>
+                    </li>
+                </ol>
+            </article>
+
         </section>
     </main>
     <footer>
