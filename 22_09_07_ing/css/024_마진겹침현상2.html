@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            /* margin-bottom: 30px; */
+            background-color: red;
+            height: 200px;
+            margin-top: 30px;
+            /* overflow: hidden; */
+            /* display: inline-block; */
+            /*컨텐츠 크기만큼만 영역을 차지하기 때문에 너비가 채워지지 않았음.*/
+            /* border: 1px solid #000; */
+            display:flow-root;
+            /* IE지원 불가로 사용이 어려울 수 있음. */
+        }
+        .child {
+            margin-top: 100px;
+            width: 100px;
+            height: 100px; 
+            /* margin-top: 60px; */
+            background-color: blue;
+
+        }
+    </style>  
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

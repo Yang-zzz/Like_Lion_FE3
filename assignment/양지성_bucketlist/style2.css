@@ -5,11 +5,15 @@ body {
     font-family:'Noto sans KR', sans-serif;
 }
 h1 {
-    font-size: 26px;
+    font-size: 23px;
     font-weight: bold;
     margin: 0;
     padding-left: 30px;
     color: #ff1493;
+}
+p {
+    margin: 0;
+    padding: 0;
 }
 
 /* 전체를 감싸는 div=wrapper */
@@ -17,8 +21,10 @@ h1 {
     width: 350px;
     margin: 150px auto;
     border-radius: 20px;
-    box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.3) ;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5) ;
     overflow: hidden;
+    /* background-color: #ffffff; */
+    background-color: red;
 }
 
 /*  header  */
@@ -29,48 +35,56 @@ h1 {
     position: relative;
 }
 
-/* before 를 사용 */
+/* 가상클래스 before 를 사용 */
 .MyBucket::before {
     content: '';
     background-color: #ff1493;
     display: inline-block;
     width: 10px;
-    height: 30px;
+    height: 33px;
     position: absolute;
     left: 0;
-    top: 35px;
+    top: 31px;
 }
-/* .box {
-    width: 10px;
-    height: 30px;
-    background-color: #ff1493;
-    display: inline-block;
-} */
+
 /* main */
 .check-list {
     background-color: #efefef;
-    /* display: flow-root; */
+    /* background-color: blue; */
     overflow: hidden;
+    /* overflow:hidden 의도는
+    ul(.list-wrapper)의 margin으로 벗어난 15px 값을 가려주기 위함.*/
+    /* 이였는데 peddin:1px , border 값을 줘도 똑같은 효과를 발견 했습니다.. 혼란이 옵니다..*/
 }
+
 .list-wrapper {
-    margin: 25px 0;
-    padding: 0 20px;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0 25px;
+    overflow: hidden;
+    /* ul(.list-wrapper) margin 과 li(.list) margin 겹침 현상을 없애기 위한 overflow hidden */
 }
+
 .list {
-    padding: 5px 5px;
-    padding-left: 15px;
+    padding: 5px 15px;
     margin: 10px auto;
     border: 3px solid rgb(170, 170, 170);
     border-radius: 5px;
     background-color: #ffffff;
     cursor: pointer;
+    /* overflow: hidden; */
 }
+
 .list:nth-child(2) {
     color: #1e91ff;
     border: 3px solid #1e91ff;
 
 }
+
 .list:hover {
     color: #1e91ff;
     border: 3px solid #1e91ff;
 }
+
+
+/* VO. 2 */

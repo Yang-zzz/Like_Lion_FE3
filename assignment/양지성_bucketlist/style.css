@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+body {
+    background-color: #dddddd;
+    font-family:'Noto sans KR', sans-serif;
+}
+h1 {
+    font-size: 23px;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 30px;
+    color: #ff1493;
+}
+
+/* 전체를 감싸는 div=wrapper */
+.wrapper { 
+    width: 350px;
+    margin: 150px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.3) ;
+    overflow: hidden;
+}
+
+/*  header  */
+.MyBucket {
+    padding: 30px 0;
+    border-bottom: 3px solid #dddddd;;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* before 를 사용 */
+.MyBucket::before {
+    content: '';
+    background-color: #ff1493;
+    display: inline-block;
+    width: 10px;
+    height: 33px;
+    position: absolute;
+    left: 0;
+    top: 31px;
+}
+
+/* main */
+.check-list {
+    background-color: #efefef;
+    /* display: flow-root; */
+    overflow: hidden;
+}
+
+.list-wrapper {
+    margin: 20px 0;
+    padding: 0 25px;
+    overflow: hidden;
+}
+
+.list {
+    padding: 5px 5px;
+    padding-left: 15px;
+    margin: 10px auto;
+    border: 3px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.list:nth-child(2) {
+    color: #1e91ff;
+    border: 3px solid #1e91ff;
+
+}
+
+.list:hover {
+    color: #1e91ff;
+    border: 3px solid #1e91ff;
+}
