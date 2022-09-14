@@ -27,3 +27,81 @@
     url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
     url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
 }
+body {
+    background-color: #5B2386;    
+}
+.app {
+
+}
+/* header */
+header {
+}
+
+h1 {
+    position: relative;
+    height: 300px;
+    border: 1px solid #000;
+}
+
+.title_1m {
+    width: 530px;
+    height: 112px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.clock {
+    width: 220px;
+    height: 225px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 5px solid #000; */
+
+}
+.one {
+    display: flex;
+    justify-content: center;
+}
+
+.sub_txt {
+   font-family:'OTEnjoystoriesBA';
+   font-size: 36px;
+   color: #F5DF4D;
+   border: 1px solid #000;
+}
+.two {
+    display: flex;
+    /* height: 100px; */
+    justify-content: center;
+    margin: 100px 0;
+    position: relative;
+    /* border: 1px solid red; */
+}
+.two p {
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    text-align: center;
+    line-height: 2em;
+    top: -10px;
+}
+.two p strong {
+    font-size: 30px;
+    font-weight: 700;
+}
+.two img {
+    position: absolute;
+}
+/* 위치 조정이 어렵다..*/
+.three {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+    /* border: 1px solid blue; */
+}
