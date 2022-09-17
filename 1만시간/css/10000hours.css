@@ -31,16 +31,18 @@ body {
     background-color: #5B2386;    
 }
 .app {
+    overflow: hidden;
 
 }
 /* header */
 header {
-}
-
-h1 {
     position: relative;
     height: 300px;
     border: 1px solid #000;
+}
+
+h1 {
+
 }
 
 .title_1m {
@@ -76,11 +78,12 @@ h1 {
 }
 .two {
     display: flex;
-    /* height: 100px; */
+    height: 110px; 
+    /* 크기를 주지 않으면 내부 컨텐츠가 보이지 않음..왜지 */
     justify-content: center;
-    margin: 100px 0;
+    margin-top: 70px;
     position: relative;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 .two p {
     font-family: 'GmarketSansMedium';
@@ -88,20 +91,50 @@ h1 {
     color: white;
     position: absolute;
     text-align: center;
-    line-height: 2em;
-    top: -10px;
+    line-height: 36px;
 }
+
 .two p strong {
     font-size: 30px;
     font-weight: 700;
 }
 .two img {
     position: absolute;
+    top: 30px;
 }
 /* 위치 조정이 어렵다..*/
+
 .three {
     display: flex;
     justify-content: center;
-    margin: 100px 0;
-    /* border: 1px solid blue; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%); */
+    margin-top: 50px;
+    border: 1px solid blue;
+}
+/* flex 와 justify-content를 사용해 중앙 배치하려했지만, 바로 위에 있는 형제 섹션과의 간격을 떨어뜨리기 위해 margin 을 사용하고자 position:absolute를 사용하였음. */
+
+.cont-inp {
+    color:white;
+    font-size: 24px;
+    font-family: GmarketSansBold;
+    font-weight: normal;
+    line-height: 3em;
+    text-align: center;
+    width: 700px;
+}
+
+.btn-exc {
+    font-family: GmarketSansBold;
+    color: #5B2386;
+    background-color: #FCEE21;
+    font-size: 24px;
+    margin-top: 70px;
+    padding: 15px 55px;
+    border-radius: 40px;
+    border-color: transparent;
+}
+.cont-inp .text-wannabe {
 }
