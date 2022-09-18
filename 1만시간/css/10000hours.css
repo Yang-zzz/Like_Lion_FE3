@@ -31,18 +31,12 @@ body {
     background-color: #5B2386;    
 }
 .app {
-    overflow: hidden;
-
 }
 /* header */
 header {
     position: relative;
     height: 300px;
     border: 1px solid #000;
-}
-
-h1 {
-
 }
 
 .title_1m {
@@ -62,7 +56,6 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* border: 5px solid #000; */
 
 }
 .one {
@@ -78,10 +71,11 @@ h1 {
 }
 .two {
     display: flex;
-    height: 110px; 
+    /* height: 110px; */
     /* 크기를 주지 않으면 내부 컨텐츠가 보이지 않음..왜지 */
     justify-content: center;
     margin-top: 70px;
+    /* margin-bottom: 102px; */
     position: relative;
     border: 1px solid red;
 }
@@ -89,7 +83,8 @@ h1 {
     font-family: 'GmarketSansMedium';
     font-size: 20px;
     color: white;
-    position: absolute;
+    /* position: absolute; */
+    /* two 부모요소가 자식요소 p태그를 인삭하지 못함. */
     text-align: center;
     line-height: 36px;
 }
@@ -107,14 +102,10 @@ h1 {
 .three {
     display: flex;
     justify-content: center;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%); */
     margin-top: 50px;
     border: 1px solid blue;
 }
-/* flex 와 justify-content를 사용해 중앙 배치하려했지만, 바로 위에 있는 형제 섹션과의 간격을 떨어뜨리기 위해 margin 을 사용하고자 position:absolute를 사용하였음. */
+
 
 .cont-inp {
     color:white;
@@ -140,12 +131,12 @@ h1 {
     padding: 15px 35px;
     border-radius: 40px;
     border-color: transparent;
-    /* position: absolute; */
 }
 .btn-wrap img {
     /* border: 1px solid #000; */
     position: absolute;
     bottom: -15px;
+    right: 40px;
 }
 
 .result {
@@ -163,28 +154,33 @@ h1 {
 }
 .result strong {
     font-size: 50px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .result .btn-wrap {
+    display: flex;
+    flex-direction: row;
     margin-top: 40px;
+    border: 1px solid #000;
 
 }
 .btn-start {
-    font-family: GmarketSansBold;
-    color: #5B2386;
     background-color: #FCEE21;
-    font-size: 20px;
-    padding: 15px 35px;
-    border-radius: 40px;
-    border-color: transparent;
 }
+
 .btn-share {
-    font-family: GmarketSansBold;
-    color: #5B2386;
-    font-size: 20px;
-    padding: 15px 35px;
-    border-radius: 40px;
-    border-color: transparent;
     margin-left: 10px;
+}
+button {
+    /* display: flex; */
+    /* gap: 10px; */
+    align-items: center;
+    font-family: GmarketSansBold;
+    font-size: 23px;
+    color: #5b2386;
+    border: none;
+    border-radius: 56px;
+    padding: 21px 49px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
