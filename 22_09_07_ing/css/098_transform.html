@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 200px;
+            border: 1px solid #000;
+            background-color: dodgerblue;
+            transition: all 1s;
+            /* transform-origin: left top; */
+            /* transform-origin: top center; */
+            /* transform-origin: bottom center; */
+        }
+        .box:hover {
+            /* transform: scale(2); */
+            /* scale 은 요소의 크기를 변화 시킬 때 사용함.*/
+            /* transform: rotate(360deg); */
+            /* transform: rotate(1turn); */
+            /* rotate 은 요소가 인자값(각도) 만큼 돈다 */
+            /* transform: translate(100px, 100px); */
+            /* transform: skew(40deg); */
+            /* skew 각도만큼 왜곡이 일어남 */
+            transform:rotate(180deg);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">hello world</div>
+</body>
+</html>

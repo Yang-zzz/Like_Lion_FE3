@@ -75,7 +75,6 @@ header {
     /* 크기를 주지 않으면 내부 컨텐츠가 보이지 않음..왜지 */
     justify-content: center;
     margin-top: 70px;
-    /* margin-bottom: 102px; */
     position: relative;
     border: 1px solid red;
 }
@@ -84,7 +83,8 @@ header {
     font-size: 20px;
     color: white;
     /* position: absolute; */
-    /* two 부모요소가 자식요소 p태그를 인삭하지 못함. */
+    /* two 부모요소가 자식요소 p태그를 인식하지 못함. */
+    /* p태그에는 position을 줄 필요가 없다! */
     text-align: center;
     line-height: 36px;
 }
