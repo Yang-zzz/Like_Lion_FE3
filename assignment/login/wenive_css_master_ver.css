@@ -1,0 +1,194 @@
+@font-face {
+font-family:  'Spoqa Han Sans Neo';
+src: url("./font/SpoqaHanSansNeo-Medium.otf");
+font-weight: 500;
+
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    src: url("./font/SpoqaHanSansNeo-Regular.otf");
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    line-height: 15px;
+    font-weight: 500;
+    font-size: 12px;
+}
+* {
+    box-sizing: border-box;
+}
+.txt-hide {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.cont-login {
+    width: 350px;
+    margin: 20px auto;
+    padding: 18px 15px 17px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+}
+.txt-login {
+    /* margin-top: 20px; */
+    margin-bottom: 16px;
+}
+.link-login {
+    display: block;
+    padding: 13px 20px 12px;
+    margin-bottom: 17px;
+    background:#711BFF;
+    border-radius: 4px;
+    color:#ffff;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+}
+.link-login .img-login {
+    width: 57px;
+    height: 11px;
+    margin-right: 6px;
+}
+
+.cont-login .find {
+    float: left;
+}
+.cont-login .join {
+    float: right;
+    margin-left: -2px;
+}
+
+.clearFix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.cont-login .img-login,
+.cont-login .img-find {
+    margin-right: 4px;
+}
+.cont-login .img-find {
+    width: 16px;
+    height: 16px;
+}
+.cont-login .find * {
+    float: left;
+}
+/* 요소에 float을 적용시키면 해당요소 display는 block 으로 변경된다. 
+따라서 <a>태그가 인라인요소 베이스 때문에 정렬되지 못했던 부분을 정렬 시킬 수 있음. */
+.cont-login .img-join {
+    width: 16px;
+    height: 16px;
+    /* margin-left: -1px; */
+}
+.cont-login .join * {
+    float: left;
+}
+
+.find [class^=link],
+.join [class^=link] {
+    color: #767676;
+    text-decoration: none;
+}
+.find .link-id::after {
+    display: inline-block;
+    content:'';
+    width: 1px;
+    height: 11px;
+    background-color: #767676;
+    margin: 0 4px 0 6px;
+    vertical-align: -1px;
+}
+
+/* @font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    src: url("images/fonts/SpoqaHanSansNeo-Medium.otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    src: url("images/fonts/SpoqaHanSansNeo-Regular.otf");
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    line-height: 15px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.cont-login {
+    width: 350px;
+    margin: 20px auto;
+    padding: 18px 15px 17px;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+}
+
+.txt-login {
+    margin-bottom: 16px;
+}
+
+.cont-login .link-login {
+    display: block;
+    padding: 13px 20px 12px;
+    margin-bottom: 17px;
+    background: #711BFF;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+.link-login .img-login {
+    width: 57px;
+    height: 11px;
+    margin-right: 8px;
+}
+
+.cont-login .find {
+    float: left;
+}
+
+.cont-login .find * {
+    float: left;
+}
+
+.cont-login .join {
+    float: right;
+}
+
+.cont-login .join * {
+    float: left;
+}
+
+.cont-login .img-find,
+.cont-login .img-join {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.find [class^=link],
+.join [class^=link] {
+    color: #767676;
+    text-decoration: none;
+}
+
+.find .link-id::after {
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 11px;
+    background-color: #767676;
+    margin: 0 4px;
+} */

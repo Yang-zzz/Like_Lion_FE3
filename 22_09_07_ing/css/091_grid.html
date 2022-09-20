@@ -32,6 +32,7 @@
             /* 3. minmax */
             /* 열방향 그리드 트랙의 최소 넓이를 50px, 최대 넓이를 150px로 합니다. */
             /* grid-template-columns: repeat(3, minmax(50px, 150px)); */
+
             /* 행방향 그리드 트랙의 최소 높이를 120px, 최대 높이를 가용할 수 있는 최대 크기로 합니다. */
             /* grid-template-rows: repeat(3, minmax(120px, auto)); */
 
@@ -39,7 +40,9 @@
             /* 실습을 위해 요소를 5개 정도로 줄여야 확인할 수 있음. */
             /* grid-template-columns: repeat(3, minmax(50px, 150px)); */
             grid-template-columns: repeat(auto-fill, minmax(50px, auto));
+            /*auto-fill 은 최솟값을 기준으로 뷰포트가 늘어났을때 최대 늘어날 수 있는 길이는 50px */
             grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+            /*auto-fit 은 최댓값을 기준으로 뷰포트가 늘어면, 늘어나는대로 같이 증가함. */
 }
         
         .item {
