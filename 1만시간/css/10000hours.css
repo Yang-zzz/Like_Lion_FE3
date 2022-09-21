@@ -30,16 +30,22 @@
 body {
     background-color: #5B2386;    
 }
-.app {
-}
-/* header */
-header {
-    position: relative;
+
+/* header css */
+.main-title {
     height: 300px;
-    border: 1px solid #000;
+    position: relative;
+}
+.hide {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
 
-.title_1m {
+.title_img {
     width: 530px;
     height: 112px;
     position: absolute;
@@ -49,74 +55,69 @@ header {
     z-index: 1;
 }
 
-.clock {
+.title_clock_img {
     width: 220px;
     height: 225px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
-.one {
+.sub_title {
     display: flex;
     justify-content: center;
+    margin-top: 46px;
 }
-
 .sub_txt {
    font-family:'OTEnjoystoriesBA';
    font-size: 36px;
    color: #F5DF4D;
-   border: 1px solid #000;
 }
-.two {
+.title_comment {
     display: flex;
-    /* height: 110px; */
-    /* 크기를 주지 않으면 내부 컨텐츠가 보이지 않음..왜지 */
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 78px;
     position: relative;
-    border: 1px solid red;
 }
-.two p {
+.title_comment p {
     font-family: 'GmarketSansMedium';
     font-size: 20px;
     color: white;
-    /* position: absolute; */
-    /* two 부모요소가 자식요소 p태그를 인식하지 못함. */
-    /* p태그에는 position을 줄 필요가 없다! */
     text-align: center;
     line-height: 36px;
+    /* position: absolute; */
+    /* .title_comment부모요소가 자식요소 p태그를 인식하지 못함. */
+    /* p태그에는 position을 줄 필요가 없다! */
 }
 
-.two p strong {
+.title_comment p strong {
     font-size: 30px;
     font-weight: 700;
 }
-.two img {
+.title_comment img {
     position: absolute;
     top: 30px;
 }
-/* 위치 조정이 어렵다..*/
 
-.three {
+.form_section {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    border: 1px solid blue;
 }
 
 
-.cont-inp {
+.content_form {
     color:white;
     font-size: 24px;
-    font-family: GmarketSansBold;
-    font-weight: normal;
+    font-family: 'GmarketSansMedium';
     line-height: 3em;
     text-align: center;
     width: 700px;
-    border: 1px solid #000;
     position: relative;
+}
+.wannabe input {
+    width: 228px;
+    height: 57px;
 }
 .btn-wrap {
 
