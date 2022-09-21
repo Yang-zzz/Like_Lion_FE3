@@ -112,58 +112,65 @@ body {
     font-family: 'GmarketSansMedium';
     line-height: 3em;
     text-align: center;
-    width: 700px;
+    width: 800px;
     position: relative;
 }
-.wannabe input {
-    width: 228px;
-    height: 57px;
+.wannabe {
+    margin-bottom: 27px;
 }
-.btn-wrap {
-
+.content_form p input {
+    width: 227px;
+    height: 52px;
+    border-radius: 7px;
+    border: none;
+    margin: 0 17px;
+}
+.content_form p input::placeholder {
+    color: #BABCBE;
+    font-size: 24px;
+    font-family:'GmarketSansMedium';
+    text-align: center;
 }
 
-.btn-exc {
-    font-family: GmarketSansBold;
+.btn-result {
+    font-family: 'GmarketSansBold';
     color: #5B2386;
     background-color: #FCEE21;
     font-size: 20px;
-    margin-top: 60px;
+    margin-top: 115px;
+    margin-right: 21px;
     padding: 15px 35px;
     border-radius: 40px;
     border-color: transparent;
 }
 .btn-wrap img {
-    /* border: 1px solid #000; */
     position: absolute;
     bottom: -15px;
-    right: 40px;
 }
 
 .result {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 30px;
-    border: 1px solid green;
+    margin-top: 127px;
     line-height: 4em;
     
 }
 .result p {
-    font-family: GmarketSansBold;
+    font-family: 'GmarketSansMedium';
     color: white;
+    font-size: 24px;
 }
 .result strong {
     font-size: 50px;
+    font-family: 'GmarketSansBold';
     vertical-align: middle;
 }
 
 .result .btn-wrap {
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
-    border: 1px solid #000;
-
+    margin-top: 127px;
 }
 .btn-start {
     background-color: #FCEE21;
@@ -172,11 +179,31 @@ body {
 .btn-share {
     margin-left: 10px;
 }
-button {
-    /* display: flex; */
-    /* gap: 10px; */
+/* footer */
+.footer_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-family: GmarketSansBold;
+    margin-top: 136px;
+}
+.weniv_logo {
+    width: 125px;
+    height: 25px;
+    margin-bottom: 20px;
+}
+small {
+    color: white;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* common */
+button {
+    align-items: center;
+    font-family: 'GmarketSansBold';
     font-size: 23px;
     color: #5b2386;
     border: none;
@@ -184,4 +211,35 @@ button {
     padding: 21px 49px;
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* modal */
+
+.cont-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    background-color: white;
+    width: 600px;
+    border-radius: 5px;
+}
+.cheerup {
+    font-size: 36px;
+    color: #5B2386;
+    font-family: 'OTEnjoystoriesBA';
+    padding-bottom: 4px;
+}
+.cheerup strong {
+    font-size: 76px;
+}
+.licat {
+    width: 433px;
+    height: 337px;
+    margin-bottom: 70px;
+}
+.btn-go {
+    background-color: #FCEE21;
+    margin: 30px;
 }

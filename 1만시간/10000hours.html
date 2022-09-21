@@ -10,7 +10,6 @@
 </head>
 <body>
     <main id="app">
-
         <header class="main-title">
           <h1 class="hide">1만 시간의 법칙</h1>
           <img class="title_img" src="./img/title.png" alt="1만시간의 법칙">
@@ -38,11 +37,11 @@
                 <p class="wannabe">
                     나는 <input type="text" placeholder="예)프로그래밍" required> 전문가가 될 것이다.
                 </p>
-                <p class="text-time">
-                    그래서 앞으로 매을 하루에 <input type="text" placeholder="예)5시간" required>시간씩 훈련할 것이다.
+                <p class="plan">
+                    그래서 앞으로 매일 하루에 <input type="text" placeholder="예)5시간" required>시간씩 훈련할 것이다.
                 </p>
                 <div class="btn-wrap">
-                 <button class="btn-exc">
+                 <button class="btn-result">
                      나는 며칠 동안 훈련을 해야 1만 시간이 될까?
                  </button>
                  <img src="./img/click.png" alt="">
@@ -51,12 +50,13 @@
         </section>
 
         <section class="result">
+            <h2 class="hide">시간계산 결과</h2>
           <div class="txt-wrap">
              <p class="result-job">
                  당신은 <strong>프로그래밍</strong> 전문가가 되기 위해서
              </p>
              <p class="result-time">
-                 대략 <strong> 5110일</strong> 이상 훈련하셔야 합니다.
+                 대략 <strong> 5110일</strong> 이상 훈련하셔야 합니다! :)
              </p>
              <div class="btn-wrap">
                  <button class="btn-start">훈련하러 가기 GO!GO!</button>
@@ -65,22 +65,21 @@
           </div>
         </section>
     </main>
-
-    <footer class="cont-footer">
-        <img src="img/logo.png" alt="주식회사위니브">
-          <small class="txt-footer">
-            ※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.<br>
-            수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.
+    <footer class="footer_content">
+        <img class="weniv_logo" src="img/logo.png" alt="주식회사위니브">
+          <small class="footer_copyright">
+              <p>※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.</p>
+              <p>수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</p>
           </small>
     </footer>
     <section class="cont-modal">
-        <!-- <h2 class="blind">응원 모달</h2> -->
-        <p>
-            <strong> 화이팅!!</strong><br>
+        <h2 class="hide">응원 모달</h2>
+        <p class="cheerup">
+            <strong> 화이팅!!!!</strong><br>
             당신의 꿈을 응원합니다.
         </p>
-        <img src="img/licat.png" alt="응원하는 라이켓">
+        <img class='licat'src="img/licat.png" alt="응원하는 라이켓">
         <button class="btn-go">종료하고 진짜 훈련하러 가기 gogo</button>
-    </section> -->
+    </section>
 </body>
 </html>
