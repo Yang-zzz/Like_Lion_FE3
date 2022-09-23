@@ -1,0 +1,71 @@
+body {
+    background-color: #EAE8FE;
+}
+/* totoal */
+.total_wrapper {
+    /* background-color: #EAE8FE; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: ;
+
+}
+
+/* section part */
+.header_sec {
+    border: 1px solid blue;
+    margin-bottom: 67px;
+}
+.logo_img {
+    width: 386px;
+    height: 164px;
+}
+.content_sec {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+}
+.content_sec h2 {
+    display: block;
+}
+
+/* content-sec-wrapper */
+.start_wrapper {
+    border: 1px solid purple;
+    /* 삭제해야함 */
+    width: 360px;
+    height: 545px;
+    /* 삭제해야함 */
+    display: grid;
+}
+.result_wrapper {
+    border: 1px solid purple;
+    /* 삭제해야함 */
+    width: 360px;
+    height: 545px;
+    /* 삭제해야함 */
+    display: grid;
+}
+
+/* inner-content */
+.select_drink {
+    border: 1px solid green;
+}
+.drink_wrap {
+    border: 1px solid #000;
+}
+
+.select_changes {
+    border: 1px solid green;
+}
+
+.saved_money {
+    border: 1px solid green;
+}
+.saver_drink {
+    border: 1px solid green;
+}
+.saved_wrapp {}
+.saved_list {
+    border: 1px solid #000;
+}
