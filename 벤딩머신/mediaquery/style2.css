@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
+
 body {
     background-color: #EAE8FE;
 }
@@ -38,22 +39,20 @@ body {
     width: 386px;
     height: 164px;
 }
+
+/* inner-content */
 .content_sec {
     display: flex;
     flex-direction: row;
+    gap: 28px;
 }
-.content_sec h2 {
-    display: block;
-}
-
-
-/* inner-content */
-
 /* left-section */
 .start_wrapper {
     background-color: #ffff;
     width: 360px;
     height: 545px;
+    padding: 31px 27px 28px 27px;
+    box-sizing: border-box;
 }
 
 .drink_wrapper {
@@ -61,8 +60,7 @@ body {
     gap: 12px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    margin: 20px 0;
-    padding: 0 27px;
+    margin-bottom: 20px;
 }
 
 .drink_list {
@@ -70,13 +68,15 @@ body {
     height: 130px;
     border-radius: 10px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
     text-align: center;
     border: 3px solid transparent;
+    box-sizing: border-box;
+
 }
 
 .drink_list:hover {
     border: 3px solid #6327FE;
+    outline: none;
 }
 .drink_list:nth-child(2) {
     position: relative;
@@ -104,29 +104,19 @@ body {
     height: 50px;
     z-index: 3;
 }
-/* .drink_list:nth-child(2)::after {
-    content: '';
-    display: inline;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 51px;
-    height: 27px;
-    background-image: url(./imges/Sold-out.png);
-    z-index: 3;
-}  */
 
 .drink_btn {
     background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    /* li크기에 맞추기 위해 위 프로퍼티 적용 */
     border: none;
-    margin: 10px 0;
-
-}
-.drink_btn figure {
     display: flex;
     flex-direction:column;
-    gap: 6px;
     align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
 
 .drink_img {
@@ -135,14 +125,14 @@ body {
 }
 .drink_name {
     font-size: 9px;
-    
 }
 .drink_price {
     font-size: 12px;
     border-radius: 50px;
     background-color: #6327FE;
     color: #fff;
-    padding: 5px 16px;
+    padding: 5px 15px;
+    line-height: 10px;
 }
 
 .changes_sec {
@@ -150,10 +140,11 @@ body {
     gap: 12px;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
-    padding: 0 27px;
-    /* 아리까리.. */
+    margin-bottom: 12px;
 }
 .changes {
+    width: 200px;
+    height: 33px;
     border-radius: 5px;
     background-color: #EAE8FE;
     display: flex;
@@ -164,6 +155,8 @@ body {
     padding: 10px 7px 7px;
 }
 .change_btn {
+    width: 94px;
+    height: 33px;
     padding: 0;
     font-size: 13px;
     border-radius: 5px;
@@ -185,15 +178,14 @@ body {
 }
 
 .select_changes2 {
-    margin: 12px 0 27px 0;
-    padding: 0 27px;    
     display: grid;
-    height: 106px;
     gap: 12px;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
 }
 .buy_list {
+    width: 200px;
+    height: 106px;
     background-color: #EAE8FE;
     overflow-y: scroll;
     border: 1px solid #bdbdbd;
@@ -213,7 +205,7 @@ body {
 }
 
 .buy_list li {
-    margin: 12px 18px 6px;
+    margin: 12px 18px 0 18px;
     box-sizing: border-box;
 }
 .buy_wrapper {
@@ -221,9 +213,8 @@ body {
     display: flex;
     border-radius: 5px;
     text-align: center;
-    align-items: center;  /* 반대축 */
+    align-items: center; 
     padding: 10px 6px 8px 7px;
-    
 }
 .buy_img {
     width: 18px;
@@ -232,7 +223,6 @@ body {
 .buy_name {
     width: 73px;
     height: 10px;
-    /* 텍스트에 양에 따라, 여백이 달라저 w, h 값을 고정으로 줬음. */
     font-size: 9px;
     font-weight: 500;
     margin-right: 18px;
@@ -248,6 +238,8 @@ body {
     line-height: 30px;
 }
 .pix_btn {
+    width: 94px;
+    height: 106px;
     color: #fff;
     font-size: 13px;
     background-color: #6327FE;
@@ -258,18 +250,28 @@ body {
 
 /* right-section */
 .result_wrapper {
-    margin-left: 28px;
+    width: 360px;
+    height: 545px;
+    /* margin-left: 28px; */
+    /* overflow: hidden; */
 }
 .saved_money {
-    padding: 9px 27px;
+    width: 360px;
+    height: 50px;
     background-color: #fff;
+    position: relative;
 }
 .money_wrapper {
+    position: absolute;
     display: flex;
     justify-content: space-between;
-    padding: 6px 10px;
+    align-items: center;
+    margin: 9px 0 9px 18px;
+    padding: 0 10px;
     background-color: #EAE8FE;
     border-radius: 5px;
+    width: 306px;
+    height: 32px;
 }
 .money_txt1 {
     font-size: 14px;
@@ -280,15 +282,16 @@ body {
 
 .saved_drink {
     margin-top: 20px;
-    height: 495px;
+    /* height: 474px; */
+    padding: 25px 27px 27px 27px;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+
 }
 .get_drink {
+    /* border: 1px solid #000; */
     font-size: 14px;
-    margin: 25px 0 13px 0;
+    text-align: center;
+    margin-bottom: 14px;
 }
 
 .saved_wrapper {
@@ -296,7 +299,6 @@ body {
     border: 1px solid #bdbdbd;
     border-radius: 5px;
     background-color: #EAE8FE;
-    margin: 0 27px 0;
     padding: 12px 12px 0 12px ;
     height: 364px;
 }
@@ -316,7 +318,6 @@ body {
     background-color: #fff;
     margin-bottom: 6px;
     border-radius: 5px;
-
 }
 
 .saved_div {
@@ -334,7 +335,6 @@ body {
     font-size: 9px;
     margin-left: 10px;
     margin-right: 100px;
-    /* border: 1px solid #000; */
     width: 73px;
 }
 
@@ -347,6 +347,14 @@ body {
     border-radius: 5px;
 }
 .total_cost {
+    text-align: right;
     font-size: 12px;
-    margin: 10px 0 26px 200px
+    margin-top: 5px;
+}
+
+@media screen and (max-width:600px) {
+    .content_sec {
+        display: flex;
+        flex-direction: column;
+    }
 }
