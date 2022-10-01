@@ -19,39 +19,46 @@
         //1000 100 11
         let s = '1000000';
         let s2 = '1,000,000,000';
-        console.log(parseInt(n1));
-        console.log(parseInt(n2));
-        console.log(parseInt(n3, 2));
-        console.log(parseInt(n4, 2));
+        console.log("정수에서 정수로 -> n1=10000, parseInt(n1) = " + parseInt(n1));
+        console.log("parseInt는 정수로 변환, n2 = 10.1 -> " + parseInt(n2));
+        console.log("NaN을 반환하는 케이스 : 0과1을 제외한 숫자는 2진법에서 유효하지 않음.-> " +parseInt(n3, 2)); // 2번 케이스
+        // NaN을 반환 하는 케이스
+        // 1. 숫자가 전혀 아닌경우 , 2. 0과 1을 제외한 숫자는 2진법에서 유효하지 않음.
+        console.log("2진수를 10진수로 변환할 때 = " + parseInt(n4, 2));
         console.log(parseInt(n5, 2));
-        console.log(n2.toFixed(3));
+        console.log("toFixed = 인자값으로 받은 수 만큼, 소수점 이하 자리수를 정확하게 반환함.  소수점 이하가 길면 숫자를 반올림, 부족할 경우 0으로 채움 = " + n2.toFixed(3));
         console.log("-------");
-        console.log(Number(true));
-        console.log(Number(false));
-        console.log(Number(""));
-        console.log(Number(" "));
+        console.log("true를 숫자로 변환할 경우 = " + Number(true));
+        console.log("false를 숫자로 변환할 경우 = " + Number(false));
+        console.log("빈문자열 숫자로 변환할 경우 = " + Number(""));
+        console.log("공백1 문자열을 숫자로 변환할 경우 = " + Number(" "));
 
         console.log("-------");
-        console.log(Number("hello"));
-        console.log(Number("10 20"));
-        console.log(Number("10     "));
+        console.log(Number("hello")); // "hello" Number형으로 변환하지 못하기 때문에 NaN
+        console.log(Number("10 20")); // "10 20" 에는 문자열 사이에 공백이 있기 때문에 변환하지 못함.
+        console.log(Number("10     ")); // 
         console.log(Number("     10"));
         console.log(Number("     10     "));
-        if (" ") {
-            console.log("hello world! - 1");
+        if ("") {
+            console.log("공백문자열은 = true, hello world! - 1");
         }
         if ("") {
             console.log("hello world! - 2");
         }
+        console.log("------------------------")
         console.log(Math.PI);
         console.log(Math.max(10, 20, 30, 1, 200, 3));
         console.log(Math.min(10, 20, 30, 1, 200, 3));
         let data = [10, 20, 30, 40];
         console.log(Math.max(data)); // NaN
         console.log(Math.max(...data)); // 40
+        // Math.max 메서드는 인자로 받는 수 중에서 가장 최대값을 츨력한다 인수가 전달되지 않으면 -infinity 값을 도출하게됨.
+        //배열요소중에서 최대값을 출력하기 위해선, 스프레드문법을 사용해야 한다.
         console.log(Math.round(4.7));
         console.log(Math.round(4.4));
-
+        //인수로 전달된 숫자의 소수점 이하를 반올림한 정수를 반환한다.
+        //
+        
         // ceil(올림) 이나 floor(내림)
         console.log(Math.random() * 1000);
 
