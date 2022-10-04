@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_질의응답</title>
+</head>
+<body>
+    <script>
+        //원본 수정 없이 값을 수정하고 싶을 때 (스프레드용법을 써서 새로운 객체에 넣는다.)
+        let x = [10, 20, 30, 40];
+        console.log([...x].pop()); //40
+        console.log(x);
+
+        let y = [...x];
+        console.log('스프레드를 사용했을 때 : ' + y)
+        y.pop();
+        console.log(y);
+
+        let b = x;
+        console.log('before-스프레드를 사용하지 않았을 때: ' + b)
+        b.pop(); // == 40
+        console.log('after-스프레드를 사용하지 않았을 때: ' + b)
+        console.log('x 배열 =  ' + x) // // 예상값
+    </script>
+</body>
+</html>ㅓㅓ
