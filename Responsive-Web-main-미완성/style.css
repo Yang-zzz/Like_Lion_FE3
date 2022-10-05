@@ -122,7 +122,61 @@ strong {
 }
 
 /* 태블릿 */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+	.wrap {
+		flex-direction: column;
+		gap: 6rem;
+		margin: 10rem auto;
+	}
+	.section-text p {
+		font-size: 1.8rem;
+	}
+	.section-field ul {
+		flex-direction: row;
+	}
+	.section-field ul li {
+		/* width: 50%; */
+		/* 컨텐츠 크기와 상관 없이 강제로 부여 */
+		flex-basis: 50%;
+		/* 강제하지 않는다. */
+	}
+	.section-field ul li a {
+		padding: 3em 3em 2em 3em;
+		gap: 9.8rem;
+		/* 컨테츠가 있는 경우 높이값을 직접 적용하지 않는것이 좋다! */
+		font-size: 1rem;
+	}
+	.section-field .field-title {
+		font-size: 2.4rem;
+	}
+}
 
 /* 모바일 */
-@media (max-width: 500px) {}
+@media (max-width: 500px) {
+	.wrap {
+		gap: 4rem;
+		max-width: calc(100% - 3.2rem);
+	}
+	.section-text h1 {
+		font-size: 3.6rem;
+	}
+	.section-text p {
+		font-size: 1.4rem;
+		margin-top: 1.4rem;
+	}
+	.section-field ul {
+		flex-direction: column;
+		gap: 1.4rem;
+	}
+	.section-field ul li a {
+		padding: 3em 3em 2em 3em;
+		gap: 11.2rem;
+		/* 컨테츠가 있는 경우 높이값을 직접 적용하지 않는것이 좋다! */
+	}
+	.section-field .field-title {
+		font-size: 2em;
+	}
+	.section-field .field-go {
+		font-size: 1.4em;
+	}
+}
