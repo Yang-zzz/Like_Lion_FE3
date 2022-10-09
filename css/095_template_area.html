@@ -1,0 +1,57 @@
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>template areas</title>
+        <style>
+            body {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas:
+                    " .   .       .     time"
+                    "head header header header"
+                    "aside1 main main aside2"
+                    "footer footer footer footer";
+            }
+            header {
+                grid-area: header;
+                background-color: pink;
+            }
+            time {
+                grid-area: time;
+                background-color: green;
+            }
+
+            main {
+                grid-area: main;
+                background-color: royalblue;
+            }
+            .aside-l {
+                grid-area: aside1;
+                background-color: lightgreen;
+            }
+            .aside-r {
+                grid-area: aside2;
+                background-color: brown;
+            }
+            footer {
+                grid-area: footer;
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    <body>
+        <header>header</header>
+        <time>time</time>
+        <aside class="aside-l">l</aside>
+        <main>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+            repellat earum iure id natus, consectetur, aut a adipisci, suscipit
+            dolore in quam commodi recusandae magni excepturi sapiente quasi
+            optio accusantium?
+        </main>
+        <aside class="aside-r">r</aside>
+        <footer>footer</footer>
+    </body>
+</html>

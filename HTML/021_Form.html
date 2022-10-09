@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="">
+        <input type="text" value="지성" name="이름">
+        <input type="hidden" value="29" name="나이">
+        <button type="submit">제출</button>
+    </form>
+
+    <!-- 
+        hidden은 어디에 쓰일까?
+    1. form에 제출되는 data를 JS로 수정하는 일은 가능하면 하지 않는 것이좋다.
+       *input으로 해결할 수 있다. *
+       
+    2. form에 없는 데이터를 추가하고 싶다면 hidden으로
+    input하나 더 만들어 value를 js로 추가하는 방식을 사용하자.
+
+    예시1) 로그인 상황인 경우, 사용자가 입력해야할 필요가 없거나, 몰라도 되는 정보, 사용자가 변경해서는 안되는 데이터(ex.Ip)를 함꼐 보낼때
+
+    예시2)정보를 수정해야 할때, DB테이블에서 가지고 있는 Primary Key값을 hidden field에 같이 전송해서, key값을 통해 해당 레코드를 식별할 수 있음.
+
+    -->
+</body>
+</html>

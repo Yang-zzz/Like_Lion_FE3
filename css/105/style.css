@@ -1,0 +1,65 @@
+.cont-select {
+    position: relative;
+    width: 200px;
+    margin: 100px auto 0;
+}
+.btn-select {
+    width: 100%;
+    padding: 11px 20px 11px 13px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+    border: 1px solid #9b51e0;
+    border-radius: 10px;
+    cursor: pointer;
+    background: url("./icon-Triangle-down.png") right 12px center no-repeat;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.btn-select:focus {
+    outline: 3px solid #F8E4FF
+}
+.btn-select.on {
+    background: url("./icon-Triangle-up.png") right 12px center no-repeat;
+}
+.btn-select.on+.list-member {
+    display: block;
+}
+.list-member {
+    display: none;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    border: 1px solid #C4C4C4;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+.list-member li {
+    padding: 5px 8px;
+}
+.list-member li button {
+    width: 100%;
+    padding: 7px 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.list-member li button:focus,
+.list-member li button:hover
+ {
+    background-color: #F8E4FF;
+}
