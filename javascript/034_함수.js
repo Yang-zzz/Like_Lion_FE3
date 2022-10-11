@@ -166,9 +166,9 @@ function 함수3(a=10, b=20, c=30){
 }
 
 console.log(함수3())
-console.log(함수3(100))
-console.log(함수3(100, 200))
-console.log(함수3(100, 200, 300))
+console.log(함수3(100)) // 150
+console.log(함수3(100, 200)) //330
+console.log(함수3(100, 200, 300)) //600
 
 console.log(함수3(c=1000)) // 1030이 되어야 하는거 아니에요? 
 // 1050
@@ -416,11 +416,13 @@ if(true) { // for문이어도 마찬가지이다.
 }
 console.log(x, y)
 
+
 function xplus() {
     x += 10  // x = x + 10
 }
 xplus ()
 console.log(x)
+
 
 // 함수가 종료된 다음에는 선언된 변수는 휘발됩니다.
 function xplus() {
@@ -430,6 +432,7 @@ function xplus() {
 xplus ()
 console.log(x)
 
+
 // 함수 안에서 함수
 function a() {
     console.log('a 실행')
@@ -437,8 +440,8 @@ function a() {
         console.log('b 실행')
     } b()
 }
-
 a()
+
 
 // 화살표 함수
 function 함수1(x,y) {

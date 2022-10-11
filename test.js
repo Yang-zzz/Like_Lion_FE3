@@ -70,46 +70,65 @@
 // console.log(result);
 
 
-let score = 71;
-let money = 1000;
-score > 90 ? money += 100000 :
-score > 80 ? money += 10000 :
-score > 70 ? money += 1000 : money = 0
+// let score = 71;
+// let money = 1000;
+// score > 90 ? money += 100000 :
+// score > 80 ? money += 10000 :
+// score > 70 ? money += 1000 : money = 0
 
-console.log(money);
+// console.log(money);
 
-if(score > 90) {
-    money += 100000
-} else if (score > 80) {
-    money += 10000
-} else if (score > 70) {
-    money += 1000
-} else {
-    money = 0
-}
-console.log(money);
+// if(score > 90) {
+//     money += 100000
+// } else if (score > 80) {
+//     money += 10000
+// } else if (score > 70) {
+//     money += 1000
+// } else {
+//     money = 0
+// }
+// console.log(money);
 
-// console.log(`10. ${false == null}<br>`); // 주의 false
-// console.log(`11. ${false == undefined}<br>`); // 주의  false
-
-
-// console.log(`14. ${isNaN(undefined)}<br>`); // true 주의
-// console.log(`15. ${isNaN(null)}<br>`); // false 주의
-// console.log(`16. ${isNaN(NaN)}<br>`); // true 주의
+// // console.log(`10. ${false == null}<br>`); // 주의 false
+// // console.log(`11. ${false == undefined}<br>`); // 주의  false
 
 
-// console.log(`17. ${Number.isNaN(undefined)}<br>`); // true 주의   false
-// console.log(`18. ${Number.isNaN(null)}<br>`); // true 주의   false
-// console.log(`19. ${Number.isNaN(NaN)}<br>`); // true 주의   true
-// console.log(`20. ${![]}<br>`); // false 주의   false
-// console.log(`21. ${!{}}<br>`); // false 주의   false
-
-console.log(Boolean());
-// 궁금?!
-// nuber
+// // console.log(`14. ${isNaN(undefined)}<br>`); // true 주의
+// // console.log(`15. ${isNaN(null)}<br>`); // false 주의
+// // console.log(`16. ${isNaN(NaN)}<br>`); // true 주의
 
 
+// // console.log(`17. ${Number.isNaN(undefined)}<br>`); // true 주의   false
+// // console.log(`18. ${Number.isNaN(null)}<br>`); // true 주의   false
+// // console.log(`19. ${Number.isNaN(NaN)}<br>`); // true 주의   true
+// // console.log(`20. ${![]}<br>`); // false 주의   false
+// // console.log(`21. ${!{}}<br>`); // false 주의   false
 
-let fish = ['정어리', '고등어', '돌고래', '참치', '고래상어', '코끼리']
-console.log(fish.slice(2,3))
-console.log(fish.slice(5,5))
+// console.log(Boolean());
+// // 궁금?!
+// // nuber
+
+
+
+// let fish = ['정어리', '고등어', '돌고래', '참치', '고래상어', '코끼리']
+// console.log(fish.slice(2,3))
+// console.log(fish.slice(5,5))
+
+// const porketmons = {
+//     피카추: 1,
+//     파이리: 2,
+//     꼬부기: 3,
+//     야도란: 4,
+//   };
+//   const a = Object.entries(porketmons);
+//   console.log(a)
+
+// for (const i in data) {
+//     console.log(data[i]);
+// }
+
+let array = [10, 20, 30, 40, 50]
+
+for(arr of array) {
+ console.log(arr)
+ }
