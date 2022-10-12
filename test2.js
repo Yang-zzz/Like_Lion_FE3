@@ -20,9 +20,77 @@
 
 
 
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-const result =
-numbers.map(number => { numbers.push(number); return number * number;} );
+// const result =
+// numbers.map(number => { numbers.push(number); return number * number;} );
 
-console.log(result); // [1, 4, 9, 16, 25];
+// console.log(result); // [1, 4, 9, 16, 25];
+
+// let temp = new Map([[1, 10],
+//     [2, 20],
+//     [3, 30],
+//     [4, 40]]);
+    
+//     console.log(temp);
+//     console.log(typeof temp);
+
+// let s = new Set('abcdeeeeeeeee');
+// console.log(s);
+// console.log(s.size);
+// console.log(s[1]);
+// console.log(typeof s)
+
+// 값이 배열인 경우
+// let cc = [0,1,2,3,4]
+// console.log(cc[0])
+// console.log(typeof cc)
+// let ss = new Set('abcdeeeeeeeee'.split(''));
+// console.log(ss);
+// console.log(ss[1]);
+// ss.clear
+// console.log(ss);
+
+// let a = new Set('abc');
+// let b = new Set('cde');
+// let cro = [...a].filter(value => b.has(value))
+// console.log(cro)
+
+// let union = new Set([...a].concat(...b))
+
+
+// function sayName(){
+//   console.log(this.name);
+// }
+
+// var name = 'Hero'; 
+// // 전역으로 선언한 name 변수의 앞에는 window 가 생략되어 있습니다. 
+// // 때문에 window.name === "Hero" 가 성립합니다.
+// let peter = {
+//   name : 'Peter Parker',
+//   sayName : sayName
+// }
+
+// let bruce = {
+//   name : 'Bruce Wayne',
+//   sayName : sayName
+// }
+
+// sayName();
+// peter.sayName(); 
+// bruce.sayName();
+
+/* sayName() 함수를 실행했을 때와 
+peter, bruce 객체의 sayName 함수를 호출했을 때의 결과를 비교해 보세요 */
+
+var peter = {
+    name : 'Peter Parker',
+    sayName : function(){    
+          console.log(this.name);
+      }
+  }
+  
+  var bruce = {
+    name : 'Bruce Wayne',
+  }
+  peter.sayName.call(bruce);
