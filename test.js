@@ -127,8 +127,25 @@
 //     console.log(data[i]);
 // }
 
-let array = [10, 20, 30, 40, 50]
+// let array = [10, 20, 30, 40, 50]
 
-for(arr of array) {
- console.log(arr)
- }
+// for(arr of array) {
+//  console.log(arr)
+//  }
+
+let m = new Map();
+
+m.set('하나', 1) // 메서드 체이닝
+    .set('둘', 2)
+    .set('셋', 3)
+    .set('넷', 4)
+
+for (const i of m) {
+    console.log(i)
+}
+
+for (const [i, j] of m) {
+    console.log(i, j)
+}
+
+console.log(typeof m)
