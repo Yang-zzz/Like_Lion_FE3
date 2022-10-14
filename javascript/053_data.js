@@ -37,6 +37,7 @@ switch (d.getDay()) {
 d.getHours()
 d.getMinutes()
 d.getSeconds()
+
 d.getFullYear()
 // d.getYear() // 1900년도부터 연도 계산, 쓰지 않습니다. 잊어버리세요.
 
