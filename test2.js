@@ -83,14 +83,20 @@
 /* sayName() 함수를 실행했을 때와 
 peter, bruce 객체의 sayName 함수를 호출했을 때의 결과를 비교해 보세요 */
 
-var peter = {
-    name : 'Peter Parker',
-    sayName : function(){    
-          console.log(this.name);
-      }
-  }
+// var peter = {
+//     name : 'Peter Parker',
+//     sayName : function(){    
+//           console.log(this.name);
+//       }
+//   }
   
-  var bruce = {
-    name : 'Bruce Wayne',
-  }
-  peter.sayName.call(bruce);
+//   var bruce = {
+//     name : 'Bruce Wayne',
+//   }
+//   peter.sayName.call(bruce);
+
+const array = [1, 2, 3];
+
+let a = array.map(x => x * 2);
+
+console.log(a);

@@ -39,15 +39,14 @@
         // })
 
         const span = document.createElement("span");
-
         const myText = document.createTextNode('good morning!');
+        span.appendChild(myText); // insertBefore 메서드를 함께 사용해야, 생성된 요소와 텍스트를 위치시킬 수 있다.
 
-        span.appendChild(myText);
         const sibling = document.getElementById("childElement");
-        const parentDiv = document.getElementById("parentElement");
+        const Div = document.getElementById("parentElement");
 
         // span 요소를 sibling 의 앞으로 배치합니다.
-        parentDiv.insertBefore(span, sibling);
+        Div.insertBefore(span, sibling); // 꼭 같이 사용해야 하는건가?
     </script>
 </body>
 
