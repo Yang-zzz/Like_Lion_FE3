@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad App</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        margin: 50px auto;
+      }
+
+      label {
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form>
+        <label for="subject">제목:</label>
+        <input type="text" id="subject" />
+        <label for="content">내용:</label>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <button type="submit">저장하기</button>
+      </form>
+      <section id="memo-container">
+        <ol>
+          <li class="memo-item">
+            날짜: <span class="date"></span><br />
+            제목: <span class="title"></span><br />
+            내용: <span class="text"></span>
+          </li>
+        </ol>
+      </section>
+    </main>
+    <script>
+      const subject = document.querySelector('#subject');
+      const content = document.querySelector('#content');
+      const saveBtn = document.querySelector('button');
+
+      const title = document.querySelector('.title');
+      const text = document.querySelector('.text');
+
+      const memo = {
+        id: '',
+        title: '',
+        content: '',
+      };
+
+      const storagedData = JSON.parse(localStorage.getItem('memoList'));
+      // JSON.parse(localStorage.getItem('memoList')) vs. localStorage.getItem('memoList')
+      /*
+      로컬스토리지 안에 프로퍼티 키가 'key'인 내용에 대해 JSON.parse()를 한 경우와 그렇지 않은 경우 다음과 같이 인식된다
+
+      1. JSON.parse(localStorage.getItem('memoList'))
+
+      {
+        title: '안녕하세요',
+        content: '테스트 입니다'
+      }
+      => 객체이다
+
+      2. localStorage.getItem('memoList')
+
+      "{ title: '안녕하세요', content: '테스트 입니다'}" => 문자열이다!
+
+      Check it!! => console.log(localStorage.getItem('memoList')[0]); // "{"
+
+      3. 로컬스토리지의 내용을 불러올 때
+        설정:
+
+        const getItemsWithJSON = JSON.parse(localStorage.getItem('memoList'));
+        const getItemsWithoutJSON = localStorage.getItem('memoList');
+
+        console.log(getItemsWithJSON['title']); // '안녕하세요'
+        console.log(getItemsWithoutJSON['title']); // undefined => 문자열로 인식하기 때문에 프로퍼티 키로 호출시 undefined가 나옴
+      */
+
+      title.innerText = storagedData['title'];
+      text.innerText = storagedData['content'];
+
+      /* const $li = document.createElement('li');
+      const $title = document.createElement('span');
+      const $text = document.createElement('span');
+
+      $li.classList.add('memo-item');
+      $title.classList.add('title');
+      $text.classList.add('text'); */
+
+      saveBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const date = new Date();
+        memo['id'] = date; // '2022-10-18 ...'
+        memo['title'] = subject.value; // '안녕하세요~'
+        memo['content'] = content.value; // '테스트입니다'
+
+        localStorage.setItem('memoList', JSON.stringify(memo));
+
+        /* text format initialization */
+        subject.value = '';
+        content.value = '';
+      });
+
+      /*
+      // ex. 1-18
+      var copyObjectViaJSON = function (target){
+        return JSON.parse(JSON.stringify(target));
+      };
+
+      - JSON.parse(): JSON문자열을 자바스크립트 객체로 변환합니다.// 새로운 객체 <= JSON 문자열
+      - JSON.stringify() : 자바스크립트 객체를 JSON문자열로 변환합니다.// 기존 객체 => JSON 문자열
+
+      var obj = {
+        a: 1,
+        b: {
+            c: null,
+            d: [1, 2],
+            func1: function () { console.log(3); }
+          },
+          func2: function () { console.log(4); }
+      };
+
+      var obj2 = copyObjectViaJSON(obj);
+
+      obj2.a = 3;
+      obj2.b.c = 4;
+      obj.b.d[1] = 3;
+
+      console.log(obj);
+      /*
+      {
+        a: 1,
+        b: {
+            c: null,
+            d: [ 1, 3 ],
+            func1: [Function: func1]
+        },
+        func2: [Function: func2]
+      }
+      */
+      //console.log(obj2);
+      /*
+      {
+        a: 3,
+        b: {
+            c: 4,
+            d: [ 1, 2 ]
+        }
+      }
+      */
+    </script>
+  </body>
+</html>
