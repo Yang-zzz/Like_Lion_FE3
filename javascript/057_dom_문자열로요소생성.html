@@ -18,16 +18,19 @@
         const myBtn = document.querySelector("button");
         const myP = document.querySelector("p");
         const myInput = document.querySelector("input");
+        const elStrong = document.createElement('strong');
 
 
         myBtn.addEventListener('click', function () {
             console.log(event);
-            myP.textContent = myInput.value;
-            myP.innerText = myInput.value;
+            // myP.textContent = myInput.value;
+            myP.insertAdjacentHTML('afterbegin', '<strong>왜안생겨..</strong>');
+            myP.innerText = myInput.value
+
         });
 
         // myP.innerText =
-            // "<strong>I'm Strong!!</strong>";
+        //     "<strong>I'm Strong!!</strong>";
 
 
         // const elStrong = document.createElement('strong');

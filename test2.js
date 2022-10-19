@@ -1,15 +1,17 @@
-arr1 = ["a", "b", "c"];
-arr2 = ["com", "b", "d", "p", "c"];
-
-function solution(s1, s2) {
-    let empty = 0;
-    for(let i=0; i<s1.length; i++) {
-        for(let j=0; j<s2.length; j++) {
-            if(s1[i] === s2[j]) {
-                empty += 1;
-            }
+function solution(dot) {
+    const arr = [];
+    dot.forEach((el) => {
+        const arr = [el];
+        if(arr[0]>0 && arr[1]>0) {
+            return 1
+        } else if(arr[0]<0 && arr[1]>0) {
+            return 2
+        } else if(arr[0]<0 && arr[1]<0) {
+            return 3
+        } else if(arr[0]>0 && arr[1]<0) {
+            return 4
         }
-    }return console.log(empty)
+    })
 }
 
-solution(arr1,arr2)
+solution([2,4]);
