@@ -549,17 +549,10 @@ class LinkedList {
 
     append(data) {
         let 새로운노드 = new Node(data);
-        //data: 1
-        //next: null
         // 마지막 값(null)은 새로운 노드가 됨
         this.tail.next = 새로운노드;
-        // l.tail.next === null 인데 그 자리에 '새로운노드' 가 들어가면
-        // data: 1 , next: null 이 들어가는건가?
-
         // 마지막 노드는 새로운 노드가 됨
         this.tail = 새로운노드;
-        // l.tail === data: inin, next = null
-        // l.tail === data: 1, next = null 로 바뀌는 건가?
     }
 }
 
@@ -580,7 +573,7 @@ l.append(30);
 // l.head.next.next.next.data
 // 3
 
-// 새로운노드 = node{data:1, next:null}
+// 새로운노드 = node(1, null)
 // init.next 값은 null인데! null자리를 '새로운노드node(1, null)'로!
 // this.tail은 이제 node(1, null)
 //
@@ -591,6 +584,56 @@ l.append(30);
 // 새로운노드 = node(3, null)
 // node(2, null).next값은 null인데! null자리를 '새로운노드node(3, null)'로!
 // node(2, null) = 새로운노드node(3, null)
+```
+
+4. step 4 - class로 linkedList에서 length 구현
+
+```js
+// head -> ['init', next]
+//               ↑
+//              tail
+
+// head -> ['init', next] -> [90, next]
+//                               ↑
+//                              tail
+
+// 여기서 데이터를 추가하면 생성되는 노드마다 데이터 공간이 할당되는 것이라 메모리가 크게 필요하게 됩니다.
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        let init = new Node("init");
+        this.head = init;
+        this.tail = init;
+        this.length = 0;
+    }
+
+    // length() { //this.length가 덮어 씀
+    //     return this.length;
+    // }
+
+    append(data) {
+        let 새로운노드 = new Node(data);
+        // 마지막 값(null)은 새로운 노드가 됨
+        this.tail.next = 새로운노드;
+        // 마지막 노드는 새로운 노드가 됨
+        this.tail = 새로운노드;
+        this.length += 1;
+    }
+}
+
+l = new LinkedList();
+l.append(1);
+l.append(2);
+l.append(3);
+l.append(10);
+l.append(20);
+l.append(30);
 ```
 
 5. step 5 - class로 linkedList에서 toString 구현
@@ -611,6 +654,10 @@ class LinkedList {
         this.length = 0;
         this.displayData = "";
     }
+
+    // length() { //this.length가 덮어 씀
+    //     return this.length;
+    // }
 
     toString() {
         return "<" + this.displayData.slice(0, -2) + ">";
@@ -893,11 +940,12 @@ let list2 = { value: 99, next: null, pre: null };
 let list3 = { value: 37, next: null, pre: null };
 let list4 = { value: 2, next: null, pre: null };
 
+list.head = list1;
 list1.next = list2;
 list2.next = list3;
 list3.next = list4;
 
-list1.pre = list.head;
+list1.pre = list;
 list2.pre = list1;
 list3.pre = list2;
 list4.pre = list3;
@@ -946,6 +994,396 @@ l.append(30);
 ```
 
 ### 1.4.3 트리와 그래프
+
+-   tree object로 구현하기(이미지 : tree만들기\_트리순회\_2.png)
+
+```js
+// 초벌작업
+// 이진 트리의 기본형태
+// value
+// child - left
+// child - right
+const tree = {
+    root: {
+        value: 5,
+        left: {
+            value: 3,
+            left: null,
+            right: null,
+        },
+        right: {
+            value: 8,
+            left: null,
+            right: null,
+        },
+    },
+};
+
+//문제 : tree만들기_트리순회_2.png를 보고 tree를 만드세요.
+const tree = {
+    root: {
+        value: 5,
+        left: {
+            value: 3,
+            left: {
+                value: 1,
+                left: null,
+                right: null,
+            },
+            right: {
+                value: 4,
+                left: null,
+                right: null,
+            },
+        },
+        right: {
+            value: 8,
+            left: {
+                value: 6,
+                left: null,
+                right: null,
+            },
+            right: {
+                value: 9,
+                left: null,
+                right: null,
+            },
+        },
+    },
+};
+
+//문제 : tree만들기.png를 보고 tree를 만드세요.
+
+const tree = {
+    root: {
+        value: 55,
+        left: {
+            value: 30,
+            left: {
+                value: 25,
+                left: {
+                    value: 21,
+                    left: null,
+                    right: null,
+                },
+                right: null,
+            },
+            right: {
+                value: 37,
+                left: null,
+                right: null,
+            },
+        },
+        right: {
+            value: 70,
+            left: {
+                value: 75,
+                left: null,
+                right: null,
+            },
+            right: {
+                value: 77,
+                left: null,
+                right: {
+                    value: 80,
+                    left: null,
+                    right: null,
+                },
+            },
+        },
+    },
+};
+
+tree.root.value;
+// 55
+tree.root.right.value;
+// 70
+tree.root.right.right.value[
+    // 77
+
+    // object나 array(기존 자료형)로 tree나 linked list를 구현할 수 있는데 왜 class로 구현할까요?
+    (5, [3, [1, [], []], [4, [], []]], [8, [6, [], []], [9, [], []]])
+];
+
+// 1. 더 lite한 모델을 만들기 위해
+// 2. 확장성(메서드 같은 것을 만들 수 있음)
+// 3. OOP(Object-Oriented Programming, 객체 지향 프로그래밍)에 철학에 맞기 때문에
+
+// node를 만들어서 삽입하는 식으로 구현
+const root = {
+    value: 55,
+    left: null,
+    right: null,
+};
+
+node1 = { value: 53, left: null, right: null };
+node2 = { value: 99, left: null, right: null };
+node3 = { value: 37, left: null, right: null };
+node4 = { value: 54, left: null, right: null };
+
+root.left = node1;
+root.right = node2;
+
+node1.left = node3;
+node1.right = node4;
+
+root.value;
+// 55
+root.right.value;
+// 99
+root.left.value;
+// 53
+root.left.left.value;
+// 37
+```
+
+-   tree를 class로 구현하기(이미지 : tree만들기\_트리순회\_.png)
+
+```js
+class Node {
+    constructor(data) {
+        this.data = data;
+        // this.child = [] // 2진트리가 아닌 트리를 만들 때 사용할 수 있습니다.
+        this.left = null;
+        this.right = null;
+    }
+}
+
+root = new Node(55);
+node1 = new Node(53);
+node2 = new Node(99);
+node3 = new Node(37);
+node4 = new Node(54);
+
+root.left = node1;
+root.right = node2;
+
+node1.left = node3;
+node1.right = node4;
+
+root.data;
+// 55
+root.left.data;
+// 53
+root.left.left.data;
+// 37
+root.left.right.data;
+// 54
+```
+
+-   트리 구현(완벽한 이진트리가 아닙니다.)
+
+```js
+class Node {
+    constructor(data) {
+        this.data = data;
+        // this.child = [] // 2진트리가 아닌 트리를 만들 때 사용할 수 있습니다.
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class Tree {
+    constructor(data) {
+        let init = new Node(data);
+        this.root = init;
+        this.length = 0;
+    }
+
+    // length(){ // this.length와 이름이 같아서 작동하지 않습니다.
+    //     return this.length
+    // }
+
+    insert(data) {
+        let 새로운노드 = new Node(data);
+        let 순회용현재노드 = this.root;
+
+        while (순회용현재노드) {
+            if (data == 순회용현재노드.data) {
+                // 들어온 값이 존재하는 값이면 트리에 값을 추가하지 않습니다.
+                return;
+            } else if (data < 순회용현재노드.data) {
+                // 들어온 데이터가 작은 경우 왼쪽에 붙여야 합니다!
+                // 해당 데이터 부분이 비어있으면 데이터를 넣고, 비어있지 않으면 계속 타고 내려가야 합니다.
+                if (!순회용현재노드.left) {
+                    순회용현재노드.left = 새로운노드;
+                    this.length += 1;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.left;
+            } else if (data > 순회용현재노드.data) {
+                // 들어온 데이터가 큰 경우 오른쪽에 붙여야 합니다!
+                // 해당 데이터 부분이 비어있으면 데이터를 넣고, 비어있지 않으면 계속 타고 내려가야 합니다.
+                if (!순회용현재노드.right) {
+                    순회용현재노드.right = 새로운노드;
+                    this.length += 1;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.right;
+            }
+        }
+    }
+}
+
+let t = new Tree(5);
+t.insert(3);
+t.insert(8);
+t.insert(1);
+t.insert(4);
+t.insert(6);
+t.insert(9);
+```
+
+-   데이터 삽입
+
+```js
+class Node {
+    constructor(data) {
+        this.data = data;
+        // this.child = [] // 2진트리가 아닌 트리를 만들 때 사용할 수 있습니다.
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class Tree {
+    constructor(data) {
+        let init = new Node(data);
+        this.root = init;
+        this.length = 0;
+    }
+
+    insert(data) {
+        let 새로운노드 = new Node(data);
+        let 순회용현재노드 = this.root;
+
+        while (순회용현재노드) {
+            if (data == 순회용현재노드.data) {
+                return;
+            } else if (data < 순회용현재노드.data) {
+                if (!순회용현재노드.left) {
+                    순회용현재노드.left = 새로운노드;
+                    this.length += 1;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.left;
+            } else if (data > 순회용현재노드.data) {
+                if (!순회용현재노드.right) {
+                    순회용현재노드.right = 새로운노드;
+                    this.length += 1;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.right;
+            }
+        }
+    }
+}
+let t = new Tree(5);
+t.insert(3);
+t.insert(8);
+t.insert(1);
+t.insert(4);
+t.insert(6);
+t.insert(9);
+```
+
+-   트리 순회
+
+```js
+class Node {
+    constructor(data) {
+        this.data = data;
+        // this.child = [] // 2진트리가 아닌 트리를 만들 때 사용할 수 있습니다.
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class Tree {
+    constructor(data) {
+        let init = new Node(data);
+        this.root = init;
+        this.length = 0;
+    }
+
+    insert(data) {
+        let 새로운노드 = new Node(data);
+        let 순회용현재노드 = this.root;
+
+        while (순회용현재노드) {
+            if (data == 순회용현재노드.data) {
+                return;
+            } else if (data < 순회용현재노드.data) {
+                if (!순회용현재노드.left) {
+                    순회용현재노드.left = 새로운노드;
+                    this.length += 1;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.left;
+            } else if (data > 순회용현재노드.data) {
+                if (!순회용현재노드.right) {
+                    순회용현재노드.right = 새로운노드;
+                    this.length += 1;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.right;
+            }
+        }
+    }
+
+    //깊스너큐
+    DFS() {
+        // 깊이우선탐색, DFS(Depth First Search)
+        // Stack 이용!
+        let 방문경로 = [];
+        let 스택 = [this.root];
+
+        while (스택.length !== 0) {
+            let current = 스택.pop();
+            if (current.right) {
+                스택.push(current.right);
+            }
+            if (current.left) {
+                스택.push(current.left);
+            }
+            방문경로.push(current.data);
+        }
+
+        return 방문경로;
+    }
+
+    BFS() {
+        // 너비우선탐색, BFS(Breadth First Search)
+        // Queue 이용!
+        let 방문경로 = [];
+        let 큐 = [this.root];
+
+        while (큐.length !== 0) {
+            let current = 큐.shift();
+            if (current.right) {
+                큐.push(current.right);
+            }
+            if (current.left) {
+                큐.push(current.left);
+            }
+            방문경로.push(current.data);
+        }
+
+        return 방문경로;
+    }
+}
+
+let t = new Tree(5);
+t.insert(3);
+t.insert(8);
+t.insert(1);
+t.insert(4);
+t.insert(6);
+t.insert(9);
+
+t.DFS();
+t.BFS();
+```
 
 ### 1.4.4 정렬 알고리즘
 
@@ -1384,7 +1822,7 @@ function 퀵정렬(입력배열) {
 ```
 
 ### 1.4.5 페이지 교체 알고리즘
-
+```js
 // https://www.notion.so/paullabworkspace/db83d9c4bbe6410ea208e6dc2daff07e
 // 페이지 교체 알고리즘 : 메모리를 효율적으로 사용하기 위해서 어떤 데이터를 메모리에 적재할지 결정하는 알고리즘
 // FIFO(오래된 녀석이 가장 빨리 나간다)
@@ -1421,349 +1859,235 @@ function 퀵정렬(입력배열) {
 ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"]
 ["","",""]
 
-["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"]
-["Jeju","",""] // 5
-
-/////// stop //////
-
-```js
-// 캐시크기 3 - 총 27
-// 바나나, 체리, 한라봉, 체리, a, b
-["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Seoul", "LA"][("Jeju", "", "")][ //5
-    ("Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Seoul", "LA")
-][("Jeju", "Pangyo", "")][ //5
-    ("Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Seoul", "LA")
-][("Jeju", "Pangyo", "Seoul")][ //5
-    ("Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Seoul", "LA")
-][("Pangyo", "Seoul", "NewYork")][ //5
-    ("Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Seoul", "LA")
-][("Seoul", "NewYork", "LA")][ //5
-    ("Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Seoul", "LA")
-][("NewYork", "LA", "Seoul")][ //1
-    ("Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Seoul", "LA")
-][("NewYork", "Seoul", "LA")][ //1
-    // LRU
-    // hit - 1
-    // miss - 5
-    ("바나나", "체리", "한라봉", "자몽", "수박", "수박", "체리")
-][바나나][(바나나, 체리)][(바나나, 체리, 한라봉)][(체리, 한라봉, 자몽)][ // 5 // 5 // 5 // 5
-    (한라봉, 자몽, 수박)
-][(한라봉, 자몽, 수박)][(자몽, 수박, 체리)][바나나][(바나나, 체리)][ // 5 // 1 - hit // 5 // 5 // 5
-    (바나나, 체리, 한라봉)
-][(바나나, 한라봉, 체리)][(한라봉, 체리, a)][(체리, a, b)][ // 5 // 1 // 5 // 5
-    // FIFO 알고리즘(캐시:3)
-    ("바나나", "체리", "한라봉", "자몽", "수박", "수박", "체리")
-][바나나][(바나나, 체리)][(바나나, 체리, 한라봉)][(체리, 한라봉, 자몽)][ // 5 // 5 // 5 // 5
-    (한라봉, 자몽, 수박)
-][(한라봉, 자몽, 수박)][(자몽, 수박, 체리)]; // 5 // 1 - hit // 5
-```
-
-## 2.1 코테 실전 풀이
-
-### 2.1.1 비밀지도(18년)
-
--   https://programmers.co.kr/learn/courses/30/lessons/17681?language=javascript
--   주제 : 2진법, 진법 연산, replace, or 연산
-
-```
-n	    5
-arr1	[9, 20, 28, 18, 11]
-arr2	[30, 1, 21, 17, 28]
-
-    01001 (9)
-or  11110 (30)
----------
-    11111
-
-    10100 (20)
-or  00001 (1)
----------
-    10101
-
-    11100 (28)
-or  10101 (21)
----------
-    11101
-
-["#####","# # #", "### #", "# ##", "#####"]
+["Jeju", "Pangyo", "Seoul", "... (16KB 남음)
 ```
 
 ```js
+2.1.4 오픈채팅방(19년)
+링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42888?language=javascript
+입력레코드
+[
+    "Enter uid1234 Muzi",
+    "Enter uid4567 Prodo",
+    "Leave uid1234",
+    "Enter uid1234 Prodo",
+    "Change uid4567 Ryan",
+];
+풀이를 위한 기본 문법
+let test = ["A 10 !", "B 20 !", "A 22", "B 20 @", "A 21 @"];
+
+test.forEach((s) => console.log(s));
+
+test.forEach((s) => {
+    console.log(s);
+    console.log(s.split(" "));
+    console.log("---------");
+});
+
+test.forEach((s) => {
+    console.log(s);
+    const [a, b, c] = s.split(" ");
+    console.log(a, b, c);
+    console.log("---------");
+});
+step 별 풀이
+{
+    '아이디': '닉네임',
+    '아이디': '닉네임',
+    '아이디': '닉네임',
+    //...
+}
+// 풀이 방식
+[
+    "Enter uid1234 Muzi",
+    "Enter uid4567 Prodo",
+    "Leave uid1234",
+    "Enter uid1234 Prodo",
+    "Change uid4567 Ryan"
+]
+
+{
+    'uid1234': 'Prodo',
+    'uid4567': 'Ryan',
+    //...
+}
+
+['uid1234', '님이 들어왔습니다.']
+['uid4567', '님이 들어왔습니다.']
+['uid1234', '님이 나갔습니다.']
+['uid1234', '님이 들어왔습니다.']
+
+[
+    "Prodo님이 들어왔습니다.",
+    "Ryan님이 들어왔습니다.",
+    "Prodo님이 나갔습니다.",
+    "Prodo님이 들어왔습니다."
+]
+
 // step 1
-function solution(n, arr1, arr2) {
-    const zip = (a, b) => a.map((v, i) => [v, b[i]]);
-    for ([i, j] of zip(arr1, arr2)){
-        console.log(i, j)
-    }
-}
-
-solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
-
-// step 2
-function solution(n, arr1, arr2) {
-    const zip = (a, b) => a.map((v, i) => [v, b[i]]);
-    for ([i, j] of zip(arr1, arr2)){
-        console.log(i | j)
-    }
-}
-
-solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
-
-// step 3
-function solution(n, arr1, arr2) {
-    answer = []
-    const zip = (a, b) => a.map((v, i) => [v, b[i]]);
-    for ([i, j] of zip(arr1, arr2)){
-        answer.push((i | j).toString(2).replace(/1/g, '#').replace(/0/g, ' '))
-    }
-    return answer
-}
-
-// step 4
-function solution(n, arr1, arr2) {
-    answer = []
-    const zip = (a, b) => a.map((v, i) => [v, b[i]]);
-    for ([i, j] of zip(arr1, arr2)){
-        answer.push((i | j).toString(2).padStart(n, '0').replace(/1/g, '#').replace(/0/g, ' '))
-    }
-    return answer
-}
-
-solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
-
-// step 4
-function solution(n, arr1, arr2) {
-    answer = []
-    for (let i = 0; i < n; i++){
-        answer.push((arr1[i] | arr2[i]).toString(2).padStart(n, '0').replace(/1/g, '#').replace(/0/g, ' '))
-    }
-    return answer
-}
-
-solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
-
-// 이 문제에서 필요한 기초 상식
-// 1. bit 단위 or 연산자
-28 | 21
-29
-20 | 1
-21
-20 | 2
-22
-20 | 3
-23
-20 | 4
-
-// 2. toString()
-let x = 9
-9.toString()
-x.toString()
-'9'
-x.toString(2)
-'1001'
-x.toString(8)
-'11'
-x.toString(16)
-'9'
-
-// 3. replace
-let x = 9
-x.toString(2).replace('1', '#')
-x.toString(2).replace(/1/g, '#').replace(/0/g, ' ')
-
-// 4. padStart
-'1001'.padStart(10, '0');
-```
-
-### 2.1.1 다트 게임(18년)
-
--   https://school.programmers.co.kr/learn/courses/30/lessons/17682
--   문자열 파싱(Parsing)
-    -   3번의 기회
-    -   0점에서 10점
-    -   보너스 - Single(S), Double(D), Triple(T) - 1제곱, 2제곱, 3제곱 (점수^1 , 점수^2 , 점수^3 )으로 계산
-    -   옵션 - 스타상(\*, 2배) , 아차상(#, 마이너스)
-    -   1S - 2
-    -   2D - 8
-    -   \*3T - 27
-    -   1D - 1
-    -   2S# - -2
-    -   10S - 10
-
-*   문제풀이
-
-    -   step 1
-
-    ```js
-    testcase = [
-        "1S2D*3T", // 37
-        "1D2S#10S", // 9
-        "1D2S0T", // 3
-    ];
-
-    function solution(dartResult) {
-        let answer = [];
-        let result = 0;
-        let temp = 0;
-
-        for (let i = 0; i < dartResult.length; i++) {
-            if (dartResult[i] >= 0 && dartResult[i] <= 9) {
-                temp = parseInt(dartResult[i]); // 이렇게 하게 되면 10점을 고려하지 않은 것!
-            } else if (dartResult[i] == "S") {
-                answer.push(temp);
-            } else if (dartResult[i] == "D") {
-                answer.push(temp ** 2);
-            } else if (dartResult[i] == "T") {
-                answer.push(temp ** 3);
-            }
-        }
-        return answer;
-    }
-
-    console.log(solution(testcase[0]));
-    console.log(solution(testcase[1]));
-    console.log(solution(testcase[2]));
-    // 정규표현식을 사용하면 보다 편하게 문자열 parsing 문제를 풀 수 있습니다.
-    // '1S2D*3T'.match(/([0-9]|10)([SDT])([\*\#]?)/g)
-
-    // 번외편
-    function solution(dartResult) {
-        let 승수 = { S: 1, D: 2, T: 3 };
-        let answer = dartResult
-            .match(/([0-9]|10)([SDT])([\*\#]?)/g)
-            .map((item) => {
-                return parseInt(item[0]) ** 승수[item[1]];
-            });
-        return answer.reduce((a, c) => a + c);
-    }
-
-    console.log(solution("1S2D3T"));
-    ```
-
-    -   step 2
-
-    ```js
-    function solution(dartResult) {
-        let answer = [];
-        let result = 0;
-        let temp = 0;
-
-        for (let i = 0; i < dartResult.length; i++) {
-            if (dartResult[i] >= 0 && dartResult[i] <= 9) {
-                if (dartResult[i] == 1 && dartResult[i + 1] == 0) {
-                    temp = 10;
-                    // continue
-                    i++;
-                } else {
-                    temp = parseInt(dartResult[i]);
-                }
-            } else if (dartResult[i] == "S") {
-                answer.push(temp);
-            } else if (dartResult[i] == "D") {
-                answer.push(temp ** 2);
-            } else if (dartResult[i] == "T") {
-                answer.push(temp ** 3);
-            } else if (dartResult[i] == "*") {
-                answer[answer.length - 1] *= 2;
-                answer[answer.length - 2] *= 2;
-            } else if (dartResult[i] == "#") {
-                answer[answer.length - 1] *= -1;
-            }
-        }
-        for (const value of answer) {
-            result += value;
-        }
-        return result;
-    }
-    ```
-
-### 2.1.1 캐시(18년)
-
--   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/17680?language=javascript
--   문제풀이
-
-```js
-// 캐시문제
-// 키워드 : LRU 알고리즘, 페이지 교체 알고리즘
-// 3	["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"]	50
-// 3	["Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"]	21
-// 2	["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"]	60
-
-testcase = [
-    [
-        3,
-        [
-            "Jeju",
-            "Pangyo",
-            "Seoul",
-            "NewYork",
-            "LA",
-            "Jeju",
-            "Pangyo",
-            "Seoul",
-            "NewYork",
-            "LA",
-        ],
-    ],
-    [
-        3,
-        [
-            "Jeju",
-            "Pangyo",
-            "Seoul",
-            "Jeju",
-            "Pangyo",
-            "Seoul",
-            "Jeju",
-            "Pangyo",
-            "Seoul",
-        ],
-    ],
-    [
-        2,
-        [
-            "Jeju",
-            "Pangyo",
-            "Seoul",
-            "NewYork",
-            "LA",
-            "SanFrancisco",
-            "Seoul",
-            "Rome",
-            "Paris",
-            "Jeju",
-            "NewYork",
-            "Rome",
-        ],
-    ],
+let record = [
+    "Enter uid1234 Muzi",
+    "Enter uid4567 Prodo",
+    "Leave uid1234",
+    "Enter uid1234 Prodo",
+    "Change uid4567 Ryan",
 ];
 
-for (const [cacheSize, cities] of testcase) {
-    console.log(solution(cacheSize, cities));
+function solution(record){
+    let answer = []
+    let user = {}
+    for (const i of record){
+        const [상태, 아이디, 닉네임] = i.split(' ')
+        answer.push([상태, 아이디, 닉네임])
+    }
+    return answer
 }
 
-// cacheSize : 3
-// cities : ["Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"]
-function solution(cacheSize, cities) {
-    let time = 0;
-    let cache = [];
-    for (let i = 0; i < cities.length; i++) {
-        let city = cities[i].toLowerCase();
-        let index = cache.indexOf(city);
-        if (index !== -1) {
-            //hit
-            cache.splice(index, 1);
-            cache.push(city);
-            time += 1;
-        } else {
-            //miss
-            cache.push(city);
-            time += 5;
-            if (cacheSize < cache.length) {
-                cache.shift();
-            }
+solution(record)
+
+// step 2
+let record = [
+    "Enter uid1234 Muzi",
+    "Enter uid4567 Prodo",
+    "Leave uid1234",
+    "Enter uid1234 Prodo",
+    "Change uid4567 Ryan",
+];
+
+function solution(record){
+    let answer = []
+    let 유저정보 = {}
+    for (const i of record){
+        const [상태, 아이디, 닉네임] = i.split(' ')
+        // answer.push([상태, 아이디, 닉네임])
+        if (상태 === 'Enter'){
+            유저정보[아이디] = 닉네임
+            answer.push([아이디, '님이 들어왔습니다.'])
+        } else if (상태 === 'Leave'){
+            answer.push([아이디, '님이 나갔습니다.'])
+        } else if (상태 === 'Change'){
+            유저정보[아이디] = 닉네임
         }
     }
-    return time;
+    //console.log(유저정보)
+    answer = answer.map(item => 유저정보[item[0]] + item[1])
+    return answer
 }
+
+solution(record)
+2.1.5 오픈채팅방(19년)
+링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42889
+// 스테이지에 도달했으나 아직 클리어하지 못한 플레이어의 수 / 스테이지에 도달한 플레이어 수
+
+// 실패율 === 아직 클리어 못한 플레이어의 수 / 도달한 플레이어 수
+// 전체 스테이지의 개수 N
+// 스테이지의 번호가 담긴 배열 stages가 매개변수
+
+// 실패율이 높은 스테이지부터 내림차순으로 스테이지의 번호가 담겨있는 배열을 return 하도록 solution 함수
+// 만약 실패율이 같은 스테이지가 있다면 작은 번호의 스테이지가 먼저 오도록 하면 된다. (오름차순)
+
+// N	stages                  	result
+// 5	[2, 1, 2, 6, 2, 4, 3, 3]	[3, 4, 2, 1, 5]
+// 4	[4, 4, 4, 4, 4]	            [4, 1, 2, 3]
+
+// 스테이지에 도달한 사람의 수
+// 1stage === 1
+// 2stage === 3
+// 3stage === 2
+// 4stage === 1
+// 5stage === 0
+
+// 실패율
+// 1stage === 1/8
+// 2stage === 3/7 === 3/(8-1)
+// 3stage === 2/4 === 2/(7-3)
+// 4stage === 1/2 === 1/(4-2)
+// 5stage === 0/1 === 0/(2-1)
+
+// 문제 풀이를 위한 기본 메서드
+[2, 1, 2, 6, 2, 4, 3, 3]
+    .filter((user) => user === 3)
+    [
+        // (2) [3, 3]
+        (2, 1, 2, 6, 2, 4, 3, 3)
+    ].filter((user) => user === 3).length;
+// 2
+
+// step 1 스테이지에 머물고 있는 사람 리스트
+function solution(N, stages) {
+    let 실패율 = [];
+    let 유저수 = stages.length;
+
+    for (let i = 1; i < N; i++) {
+        let 도달한사람수 = stages.filter((user) => user === i);
+        실패율.push(도달한사람수);
+    }
+    return 실패율;
+}
+
+solution(5, [2, 1, 2, 6, 2, 4, 3, 3]);
+
+// step 2 실패율
+function solution(N, stages) {
+    let 실패율 = [];
+    let 유저수 = stages.length;
+
+    for (let i = 1; i < N; i++) {
+        let 도달한사람수 = stages.filter((user) => user === i).length;
+        실패율.push(도달한사람수 / 유저수);
+        유저수 -= 도달한사람수;
+        console.log(유저수, 도달한사람수);
+    }
+    return 실패율;
+}
+
+solution(5, [2, 1, 2, 6, 2, 4, 3, 3]);
+
+// step 3 정렬
+function solution(N, stages) {
+    let 실패율 = [];
+    let 유저수 = stages.length;
+
+    for (let i = 1; i <= N; i++) {
+        let 도달한사람수 = stages.filter((user) => user === i).length;
+        let 확률 = 도달한사람수 / 유저수;
+        실패율.push({ 스테이지: i, 확률 });
+        유저수 -= 도달한사람수;
+        console.log(유저수, 도달한사람수);
+    }
+
+    // 정렬 기준 확인 필요
+    실패율.sort((a, b) => {
+        if (a.확률 < b.확률) return 1;
+        if (a.확률 > b.확률) return -1;
+        if (a.확률 === b.확률) return 0;
+    });
+    return 실패율;
+}
+
+solution(5, [2, 1, 2, 6, 2, 4, 3, 3]);
+
+// step 4 스테이지만 출력
+function solution(N, stages) {
+    let 실패율 = [];
+    let 유저수 = stages.length;
+
+    for (let i = 1; i <= N; i++) {
+        let 도달한사람수 = stages.filter((user) => user === i).length;
+        let 확률 = 도달한사람수 / 유저수;
+        실패율.push({ 스테이지: i, 확률 });
+        유저수 -= 도달한사람수;
+        console.log(유저수, 도달한사람수);
+    }
+
+    // 정렬 기준 확인 필요
+    실패율.sort((a, b) => {
+        if (a.확률 < b.확률) return 1;
+        if (a.확률 > b.확률) return -1;
+        if (a.확률 === b.확률) return 0;
+    });
+    return 실패율.map((object) => object.스테이지);
+}
+
+solution(5, [2, 1, 2, 6, 2, 4, 3, 3]);
 ```
