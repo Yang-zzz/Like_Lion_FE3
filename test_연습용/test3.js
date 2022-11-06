@@ -18,3 +18,5 @@ anotherPerson.getName = person.getName;
 console.log(anotherPerson.getName()); // Kim
 
 console.log(person.getName === anotherPerson.getName); // true
+
+
