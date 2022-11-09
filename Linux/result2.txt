@@ -1,0 +1,8 @@
+total 8
+drwxr-xr-x   7 yangjiseong  staff  224 11  9 13:48 .
+drwxr-xr-x@ 29 yangjiseong  staff  928 11  8 13:25 ..
+-rw-r--r--   1 yangjiseong  staff    0 11  9 13:23 001.html
+-rw-r--r--   1 yangjiseong  staff    0 11  9 13:23 002.html
+-rw-r--r--   1 yangjiseong  staff    0 11  9 13:23 003.html
+-rw-r--r--   1 yangjiseong  staff    0 11  9 13:48 result.txt
+-rw-r--r--   1 yangjiseong  staff    6 11  9 13:41 test.txt
