@@ -52,25 +52,31 @@
   margin: -1px;
   overflow: hidden;
 }
-#main {
-  border: 1px solid #000;
-  /* temp */
-  margin-top: 20px;
+#main {  
+  margin: 28px 28px;
   padding: 27px 27px;
+  /* temp */
+  border: 1px solid #000;
+  border-radius: 10px;
 }
 .main-sec-newItems {
   display: flex;
   flex-direction: column;
 }
 
-.newItem-list {
+.newItems-list {
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 23px;
-  margin-top: 24px;
+  margin-bottom: 24px;
 }
-.newItem-list li {
+
+.newItems-list li {
   border: 1px solid #bdbdbd;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 .list-wrapp {
@@ -86,6 +92,7 @@
   height: 250px;
   border-radius: 10px;
   border-color: #bdbdbd;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 .newItem-tit {
   text-align: center;
