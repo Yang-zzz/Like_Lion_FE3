@@ -20,7 +20,7 @@ function ProductDetails(){
   console.log(location)
   console.log(location.pathname.split('/'))
   
-  return <h2>ProductDetails {id} 페이지</h2>
+  return <h2>ProductDetails { id } 페이지</h2>
 }
 
 function Cart(){

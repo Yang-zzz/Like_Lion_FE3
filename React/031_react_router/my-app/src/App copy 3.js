@@ -41,20 +41,20 @@ function BlogHome(){
 }
 
 function Blog(){
-  const location = useLocation();
-console.log(location)
-console.log(location.pathname)
-console.log(location.pathname.slice(-1))
-console.log(location.pathname.split('/'))
-const urlSlicingValue = location.pathname.split('/')[2]
-const imgUrl = `http://test.api.weniv.co.kr/asset/img/${urlSlicingValue}/thumbnailImg.jpg`
-console.log(imgUrl)
-return (
-  <>
-    <h1>hello Blog</h1>
-    <img src={imgUrl} alt="" />
-  </>
-)
+	const location = useLocation();
+  console.log(location)
+  console.log(location.pathname)
+  console.log(location.pathname.slice(-1))
+  console.log(location.pathname.split('/'))
+  const urlSlicingValue = location.pathname.split('/')[2]
+  const imgUrl = `http://test.api.weniv.co.kr/asset/img/${urlSlicingValue}/thumbnailImg.jpg`
+  console.log(imgUrl)
+  return (
+    <>
+      <h1>hello Blog</h1>
+      <img src={imgUrl} alt="" />
+    </>
+  )
 }
 
 export default App;
